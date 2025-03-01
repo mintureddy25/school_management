@@ -1,19 +1,19 @@
-// swaggerDocs.js
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const config  = require('./config/index.config');
 
 const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "My API",
+      title: "School Management",
       version: "1.0.0",
-      description: "API documentation for My Express App",
+      description: "API documentation for School Management",
     },
     servers: [
       {
-        url: "http://localhost:5111",
-        description: "Local server",
+        url: `http://localhost:${config.dotEnv.USER_PORT}`,
+        description: "School Management",
       },
     ],
   },
